@@ -65,13 +65,13 @@
 #########
 
 # FILE CONDITIONS
-FILE="text.txt"
-if [ -f "$FILE" ]
-then
-  echo "$FILE is a file"
-else
-  echo "$FILE NOT a file"
-fi
+# FILE="text.txt"
+# if [ -f "$FILE" ]
+# then
+#   echo "$FILE is a file"
+# else
+#   echo "$FILE NOT a file"
+# fi
 ###########
 # -d file       True if then file is a direcory
 # -e file       True if the file exists {note that is not particularly portable, thus -f is generally used}
@@ -82,3 +82,70 @@ fi
 # -u            True if the user id is set on a file
 # -w            True if the file is writable
 # -x            True if the file is executable
+
+# CASE STATEMENT
+# read -p "Are you 21 or over? Y/N " ANSWER
+# case "$ANSWER" in
+#   [yY] | [yY][eE][sS])
+#     echo "You can have a beer ;)"
+#     ;;
+#   [nN] | [nN][oO])
+#     echo "Sorry, no drinking!"
+#     ;;
+#   *)
+#   echo "Pleas enter y/yes or n/no"
+#   ;;
+# esac
+
+# SIMPLE FOR LOOP
+# NAMES="Jack Alice John Doe"
+# for NAME in $NAMES
+#   do
+#     echo "Hello $NAME"
+# done
+
+# FOR LOOP TO RENAME FILES
+# FILES=$(ls *.txt)
+# NEW="new"
+# for FILE in $FILES
+#   do
+#     echo "Renaming $FILE to new-$FILE"
+#     mv $FILE $NEW-$FILE
+# done
+
+# for FILE in $FILES
+#   do
+#     rm -R $FILE
+# done
+
+# NAMES="1 2 3"
+# for FILE in $NAMES
+#   do
+#     touch $FILE.txt
+# done
+
+# WHILE LOOP - READ THROUGH A FILE LINE BY LINE
+# LINE=1
+# while read -r CURRENT_LINE
+#   do
+#     echo "$LINE: $CURRENT_LINE"
+#     ((LINE++))
+# done < "1.txt"
+
+# FUNCTION
+# function seyHEllo(){
+#   echo "Hello New Function"
+# }
+# seyHEllo
+
+# FUNCTION WITH PARAMS
+# function greet(){
+#   echo "Hello I'm $1, and I'm $2"
+# }
+# greet "Ilosrim" "24"
+
+# CREATE FOLDER AND WRITE TO AFILE
+mkdir hello
+touch "hello/world.txt"
+echo "Hello World" >> "hello/world.txt"
+cat "hello/world.txt"
